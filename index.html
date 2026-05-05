@@ -4,284 +4,212 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>Kaique Resolve | Conserto de Portão Elétrico em Ribas do Rio Pardo - MS</title>
-    <meta name="description" content="Seu portão eletrônico estragou? O Kaique Resolve é especialista em conserto, manutenção e instalação de motores de portão em Ribas do Rio Pardo. Atendimento rápido!">
-    <meta name="keywords" content="conserto de portão Ribas do Rio Pardo, manutenção de portão eletrônico, motor de portão PPA Rossi, instalador de portão MS, Kaique Resolve">
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Kaique Resolve - Portões Eletrônicos",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ribas do Rio Pardo",
-        "addressRegion": "MS",
-        "addressCountry": "BR"
-      },
-      "url": "https://kaiqueresolve.vercel.app",
-      "telephone": "+55SEUNUMERO",
-      "priceRange": "$$"
-    }
-    </script>
+    <title>Kaique Resolve | Especialista em Portões Eletrônicos</title>
+    <meta name="description" content="Manutenção especializada e instalação de motores de portão em Ribas do Rio Pardo. Segurança e agilidade com Kaique Resolve.">
+    <link rel="canonical" href="https://kaiqueresolve.vercel.app">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
     <style>
         :root {
-            --bg-color: #0a0a0a;
-            --surface: #141414;
-            --surface-hover: #1f1f1f;
-            --border: #262626;
-            --text-main: #ffffff;
-            --text-muted: #a1a1aa;
-            --brand: #25D366;
-            --brand-hover: #1dad52;
-            --shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --bg: #090909;
+            --surface: #111111;
+            --border: #222222;
+            --brand: #ff6a00;
+            --text-main: #ededed;
+            --text-muted: #888888;
+            --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; width: 100%; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        
+        body { background-color: var(--bg); color: var(--text-main); line-height: 1.5; overflow-x: hidden; }
 
-        /* Header */
-        header {
-            padding: 16px 0;
-            border-bottom: 1px solid var(--border);
-            position: fixed;
-            width: 100%;
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+        /* Header Minimalista */
+        header { 
+            padding: 24px 0; 
+            border-bottom: 1px solid var(--border); 
+            background: rgba(9, 9, 9, 0.8);
+            backdrop-filter: blur(8px);
+            position: sticky;
             top: 0;
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(12px);
             z-index: 100;
         }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 800; font-size: 1rem; letter-spacing: -0.04em; display: flex; align-items: center; gap: 8px; }
+        .logo i { color: var(--brand); font-size: 1.2rem; }
 
-        .logo { font-size: 1.25rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-        .logo i { color: var(--brand); }
-
-        /* Hero Section */
-        .hero {
-            padding: 120px 0 60px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            min-height: 85vh;
-            justify-content: center;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 600px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(37,211,102,0.1) 0%, rgba(10,10,10,0) 70%);
-            z-index: -1;
-            pointer-events: none;
-        }
-
+        /* Hero: Visual Art Perspective */
+        .hero { padding: 100px 0 80px; text-align: center; }
+        
         .badge {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            padding: 6px 16px;
-            border-radius: 999px;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 24px;
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--brand);
+            margin-bottom: 32px;
         }
 
         .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
-            line-height: 1.1;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 850;
+            line-height: 0.95;
+            letter-spacing: -0.06em;
             margin-bottom: 24px;
-            max-width: 850px;
-            letter-spacing: -0.03em;
+            background: linear-gradient(180deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: 1.15rem;
+            font-size: clamp(1rem, 4vw, 1.25rem);
             color: var(--text-muted);
-            max-width: 600px;
-            margin-bottom: 40px;
+            max-width: 540px;
+            margin: 0 auto 40px;
+            font-weight: 400;
         }
 
-        /* Botão */
-        .btn {
+        /* Botão Vercel Style */
+        .btn-primary {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
             gap: 12px;
-            background-color: var(--brand);
-            color: #000000;
-            text-decoration: none;
-            padding: 18px 36px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            width: fit-content;
-        }
-
-        .btn:hover { background-color: var(--brand-hover); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3); }
-
-        .hero-list {
-            display: flex;
-            gap: 24px;
-            margin-top: 40px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .hero-list span { display: flex; align-items: center; gap: 8px; }
-        .hero-list i { color: var(--brand); }
-
-        /* Serviços */
-        .services { padding: 80px 0; }
-        .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 16px; text-align: center; }
-        .section-subtitle { text-align: center; color: var(--text-muted); margin-bottom: 48px; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 32px; transition: var(--transition); }
-        .card:hover { border-color: var(--brand); transform: translateY(-4px); background: var(--surface-hover); }
-        .card i { font-size: 2.5rem; color: var(--brand); margin-bottom: 20px; display: block; }
-        .card h3 { font-size: 1.25rem; margin-bottom: 12px; font-weight: 600; }
-        .card p { color: var(--text-muted); font-size: 0.95rem; }
-
-        /* Floating WhatsApp */
-        .float-wpp {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            background-color: var(--brand);
+            background: var(--brand);
             color: #000;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        .btn-primary:hover { transform: scale(1.02); filter: brightness(1.1); }
+
+        /* Grid de Serviços Otimizado */
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 1px; 
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 60px;
+        }
+        
+        .card { 
+            background: var(--bg); 
+            padding: 40px; 
+            transition: var(--transition); 
+        }
+        .card:hover { background: var(--surface); }
+        .card i { font-size: 2rem; color: var(--brand); margin-bottom: 24px; display: block; }
+        .card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.02em; }
+        .card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .hero { padding: 60px 0 40px; }
+            .grid { grid-template-columns: 1fr; }
+            .card { padding: 32px 24px; }
+            .hero h1 { margin-bottom: 20px; }
+            .hero p { font-size: 1rem; margin-bottom: 32px; }
+        }
+
+        /* Floating Element */
+        .wpp-float {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            background: #25d366;
+            color: #fff;
             width: 56px;
             height: 56px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            box-shadow: var(--shadow);
+            font-size: 1.8rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             z-index: 1000;
             transition: var(--transition);
-            text-decoration: none;
         }
-
-        /* Animações */
-        .fade-up { opacity: 0; transform: translateY(30px); transition: 0.8s ease; }
-        .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-        /* Ajuste Mobile */
-        @media (max-width: 768px) {
-            .hero { padding: 100px 0 50px; }
-            .hero h1 { font-size: 2.1rem; line-height: 1.2; }
-            .hero p { font-size: 1rem; }
-            .btn { width: 100%; }
-            .hero-list { flex-direction: column; align-items: center; gap: 12px; }
-            .section-title { font-size: 1.75rem; }
-            .grid { grid-template-columns: 1fr; }
-        }
+        .wpp-float:hover { transform: translateY(-5px); }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="container">
+        <div class="container nav-inner">
             <div class="logo">
-                <i class="ph-fill ph-gear-six"></i> Kaique Resolve
+                <i class="ph-fill ph-bolt"></i> KAIQUE RESOLVE
             </div>
         </div>
     </header>
 
-    <main>
-        <section class="hero container fade-up">
+    <main class="container">
+        <section class="hero">
             <div class="badge">
-                <i class="ph-fill ph-map-pin"></i> Ribas do Rio Pardo - MS
+                <i class="ph-fill ph-map-pin"></i> Ribas do Rio Pardo
             </div>
-            <h1>Seu portão elétrico parou de funcionar? Eu resolvo!</h1>
-            <p>Especialista em manutenção, reparo de motores e instalação de portões eletrônicos. Atendimento rápido para você não ficar na mão.</p>
+            <h1>Portão parado é risco. Eu resolvo.</h1>
+            <p>Manutenção técnica em motores eletrônicos com precisão e agilidade. Sem termos técnicos, apenas a solução.</p>
             
-            <a href="https://wa.me/55SEUNUMERO?text=Olá%20Kaique,%20meu%20portão%20estragou,%20pode%20me%20ajudar?" class="btn" target="_blank">
-                <i class="ph-fill ph-whatsapp-logo"></i>
-                Consertar meu Portão Agora
+            <a href="https://wa.me/55SEUNUMERO" class="btn-primary">
+                Agendar Reparo Agora <i class="ph-bold ph-arrow-right"></i>
             </a>
 
-            <div class="hero-list">
-                <span><i class="ph-bold ph-check"></i> Reparo de Motores</span>
-                <span><i class="ph-bold ph-check"></i> Troca de Placas</span>
-                <span><i class="ph-bold ph-check"></i> Novos Controles</span>
-            </div>
-        </section>
-
-        <section class="services fade-up">
-            <div class="container">
-                <h2 class="section-title">Especialista em Portão Eletrônico</h2>
-                <p class="section-subtitle">Tudo o que você precisa para a segurança e agilidade da sua garagem.</p>
-                
-                <div class="grid">
-                    <div class="card">
-                        <i class="ph-fill ph-engine"></i>
-                        <h3>Conserto de Motores</h3>
-                        <p>Manutenção em motores PPA, Rossi, Intelbras e Peccinin. Troca de engrenagens, capacitores e sensores de fim de curso.</p>
-                    </div>
-                    <div class="card">
-                        <i class="ph-fill ph-cpu"></i>
-                        <h3>Placas e Controles</h3>
-                        <p>Configuração de novos controles, substituição de centrais de comando queimadas e ajuste de velocidade do portão.</p>
-                    </div>
-                    <div class="card">
-                        <i class="ph-fill ph-wrench"></i>
-                        <h3>Manutenção Geral</h3>
-                        <p>Troca de cremalheiras, lubrificação de trilhos, soldas em portões e instalação de travas elétricas de segurança.</p>
-                    </div>
+            <div class="grid">
+                <div class="card">
+                    <i class="ph-fill ph-wrench"></i>
+                    <h3>Manutenção</h3>
+                    <p>Reparo em motores PPA, Rossi e Intelbras. Ajuste de trilhos e engrenagens.</p>
+                </div>
+                <div class="card">
+                    <i class="ph-fill ph-broadcast"></i>
+                    <h3>Configuração</h3>
+                    <p>Codificação de controles e ajuste de fim de curso para fechamento perfeito.</p>
+                </div>
+                <div class="card">
+                    <i class="ph-fill ph-shield-check"></i>
+                    <h3>Instalação</h3>
+                    <p>Novos motores e sistemas de trava elétrica para máxima segurança residencial.</p>
                 </div>
             </div>
         </section>
 
-        <section class="cta-section container fade-up" style="padding-bottom: 100px;">
-            <div class="cta-box" style="text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 48px 24px;">
-                <h2 style="margin-bottom: 16px;">Não fique com o portão aberto</h2>
-                <p style="color: var(--text-muted); margin-bottom: 32px;">Segurança não pode esperar. Entre em contato agora e agende uma visita técnica hoje mesmo em Ribas.</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá%20Kaique,%20preciso%20de%20um%20orçamento%20para%20meu%20portão" class="btn">
-                    <i class="ph-fill ph-whatsapp-logo"></i>
-                    Solicitar Orçamento Grátis
-                </a>
+        <section style="padding-bottom: 100px; border-top: 1px solid var(--border); padding-top: 80px;">
+            <div style="max-width: 600px;">
+                <h2 style="font-size: 2rem; font-weight: 800; letter-spacing: -0.04em; margin-bottom: 24px;">Atendimento humanizado,<br>resultado profissional.</h2>
+                <p style="color: var(--text-muted); margin-bottom: 32px;">Trabalho sozinho e focado. Quando você chama o Kaique Resolve, fala diretamente com quem vai executar o serviço no seu portão.</p>
+                <div style="display: flex; flex-direction: column; gap: 16px;">
+                    <div style="display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 0.9rem;">
+                        <i class="ph-bold ph-check" style="color: var(--brand);"></i> Orçamento transparente via WhatsApp
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 0.9rem;">
+                        <i class="ph-bold ph-check" style="color: var(--brand);"></i> Limpeza e organização pós-serviço
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <a href="https://wa.me/55SEUNUMERO?text=Olá%20Kaique,%20meu%20portão%20estragou,%20pode%20me%20ajudar?" class="float-wpp" target="_blank" aria-label="Chamar no WhatsApp">
+    <a href="https://wa.me/55SEUNUMERO" class="wpp-float">
         <i class="ph-fill ph-whatsapp-logo"></i>
     </a>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-        });
-    </script>
 </body>
 </html>
