@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>Kaique Resolve | Especialista em Portões Eletrônicos</title>
-    
+    <title>Kaique Resolve | Automação e Manutenção de Portões em Ribas do Rio Pardo</title>
+    <meta name="description" content="Especialista em conserto de portão eletrônico, motores PPA, Rossi e Intelbras. Atendimento técnico especializado em Ribas do Rio Pardo - MS.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <style>
         :root {
             --bg: #090909;
             --surface: #111111;
+            --surface-accent: #1a1a1a;
             --border: #222222;
             --brand: #ff6a00;
             --text-main: #ffffff;
@@ -23,47 +25,47 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background: var(--bg); color: var(--text-main); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        body { background: var(--bg); color: var(--text-main); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; width: 100%; }
 
         /* HEADER */
         header { 
-            padding: 24px 0; 
+            padding: 20px 0; 
             border-bottom: 1px solid var(--border); 
             background: rgba(9, 9, 9, 0.8);
             backdrop-filter: blur(12px);
             position: sticky; top: 0; z-index: 100;
         }
         .nav-inner { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 800; font-size: 1rem; letter-spacing: -0.05em; display: flex; align-items: center; gap: 10px; }
-        .logo i { color: var(--brand); font-size: 1.2rem; }
+        .logo { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.05em; display: flex; align-items: center; gap: 10px; }
+        .logo i { color: var(--brand); }
 
         /* HERO */
-        .hero { padding: 100px 0 60px; }
+        .hero { padding: 100px 0 60px; text-align: left; }
         .badge {
             display: inline-flex; align-items: center; gap: 8px;
-            background: #1a1a1a; border: 1px solid var(--border);
-            padding: 6px 12px; border-radius: 6px; font-size: 0.7rem;
-            font-weight: 700; color: var(--brand); margin-bottom: 24px;
-            text-transform: uppercase; letter-spacing: 1px;
+            background: var(--surface-accent); border: 1px solid var(--border);
+            padding: 6px 12px; border-radius: 6px; font-size: 0.75rem;
+            font-weight: 600; color: var(--brand); margin-bottom: 24px;
         }
         .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 4.2rem);
-            font-weight: 800; line-height: 0.95; letter-spacing: -0.06em;
-            margin-bottom: 28px;
+            font-size: clamp(2.5rem, 7vw, 4.2rem);
+            font-weight: 800; line-height: 1; letter-spacing: -0.06em;
+            margin-bottom: 28px; max-width: 900px;
         }
         .hero p {
             font-size: clamp(1.1rem, 3vw, 1.3rem); color: var(--text-muted);
-            max-width: 600px; margin-bottom: 40px;
+            max-width: 650px; margin-bottom: 40px;
         }
 
-        /* BENTO GRID - SISTEMA ROBUSTO */
+        /* BENTO GRID SERVICES */
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: minmax(180px, auto);
             gap: 16px;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
         }
         .bento-item {
             background: var(--surface);
@@ -71,23 +73,36 @@
             border-radius: 16px;
             padding: 32px;
             transition: var(--transition);
+            position: relative; overflow: hidden;
+            word-wrap: break-word; /* Evita que palavras longas quebrem o layout */
         }
-        .bento-item:hover { border-color: var(--brand); }
-        .bento-item i { font-size: 2rem; color: var(--brand); margin-bottom: 20px; display: block; }
-        .bento-item h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.02em; }
-        .bento-item p { color: var(--text-muted); font-size: 0.95rem; }
+        .bento-item:hover { border-color: var(--brand); background: var(--surface-accent); }
+        .bento-item i { font-size: 2rem; color: var(--brand); margin-bottom: 16px; display: block; }
+        .bento-item h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
+        .bento-item p { color: var(--text-muted); font-size: 0.9rem; }
 
-        /* Definição de colunas Desktop */
-        .col-8 { grid-column: span 8; }
+        /* Layout do Grid Desktop */
+        .col-6 { grid-column: span 6; }
         .col-4 { grid-column: span 4; }
+        .col-8 { grid-column: span 8; }
         .col-12 { grid-column: span 12; }
 
+        /* PROCESSO DE TRABALHO */
+        .process { padding: 80px 0; border-top: 1px solid var(--border); }
+        .section-header { margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.04em; }
+        
+        .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .step { position: relative; }
+        .step-num { font-size: 0.8rem; font-weight: 800; color: var(--brand); margin-bottom: 12px; display: block; opacity: 0.6; }
+        .step h4 { font-size: 1.1rem; margin-bottom: 12px; }
+
         /* CTA */
-        .cta-section {
-            background: linear-gradient(180deg, #111 0%, #000 100%);
-            border: 1px solid var(--border);
-            padding: 80px 40px; border-radius: 24px; text-align: center;
-            margin-bottom: 80px;
+        .cta-card {
+            background: linear-gradient(135deg, #111 0%, #000 100%);
+            border: 1px solid var(--brand);
+            padding: 60px 40px; border-radius: 24px; text-align: center;
+            margin: 80px 0;
         }
         .btn-main {
             display: inline-flex; align-items: center; gap: 12px;
@@ -95,30 +110,29 @@
             border-radius: 8px; font-weight: 700; text-decoration: none;
             transition: var(--transition); font-size: 1.1rem;
         }
-        .btn-main:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(255, 106, 0, 0.3); }
+        .btn-main:hover { transform: translateY(-4px); filter: brightness(1.2); }
 
-        /* RESPONSIVIDADE EXTREMA (FIX) */
-        @media (max-width: 900px) {
-            .bento-grid {
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-            }
+        /* FOOTER */
+        footer { padding: 60px 0; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--text-muted); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer-list { list-style: none; }
+        .footer-list li { margin-bottom: 8px; }
+
+        /* MOBILE FIX (CORREÇÃO DO BUG DO PRINT) */
+        @media (max-width: 768px) {
             .hero { padding: 60px 0 40px; }
-            .hero h1 { font-size: 2.8rem; }
-            .bento-item { padding: 24px; }
-            .cta-section { padding: 60px 24px; }
+            .bento-grid { 
+                display: flex; 
+                flex-direction: column; 
+                gap: 12px; 
+            }
+            .bento-item {
+                width: 100%;
+                padding: 24px;
+            }
+            .cta-card { padding: 40px 20px; }
+            .hero h1 { font-size: 2.5rem; }
         }
-
-        /* Floating WPP */
-        .wpp-float {
-            position: fixed; bottom: 32px; right: 32px;
-            background: #25d366; color: #fff; width: 60px; height: 60px;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 2rem; z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            text-decoration: none; transition: var(--transition);
-        }
-        .wpp-float:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
@@ -126,52 +140,56 @@
     <header>
         <div class="container nav-inner">
             <div class="logo">
-                <i class="ph-fill ph-bolt"></i> KAIQUE RESOLVE
+                <i class="ph-fill ph-shield-check"></i> KAIQUE RESOLVE
             </div>
-            <div style="font-size: 0.7rem; font-weight: 700; color: var(--brand); letter-spacing: 1px;">RIBAS DO RIO PARDO</div>
+            <div style="font-size: 0.8rem; font-weight: 600; color: var(--brand);">DISPONÍVEL HOJE</div>
         </div>
     </header>
 
     <main class="container">
         <section class="hero">
-            <div class="badge">Especialista em Automação</div>
-            <h1>Segurança máxima para o seu acesso.</h1>
-            <p>Manutenção de alta performance em portões eletrônicos. Diagnóstico técnico preciso e execução ágil para sua residência ou empresa.</p>
+            <div class="badge">ESPECIALISTA EM AUTOMAÇÃO</div>
+            <h1>Segurança e agilidade no acesso da sua casa.</h1>
+            <p>Diagnóstico técnico de alta precisão em portões eletrônicos. Atendimento em Ribas do Rio Pardo com garantia de serviço executado por especialista.</p>
             <a href="https://wa.me/55SEUNUMERO" class="btn-main">
-                FALAR COM O TÉCNICO <i class="ph-bold ph-arrow-right"></i>
+                SOLICITAR VISITA TÉCNICA <i class="ph-bold ph-whatsapp-logo"></i>
             </a>
         </section>
 
         <div class="bento-grid">
             <div class="bento-item col-8">
                 <i class="ph-fill ph-cpu"></i>
-                <h3>Eletrônica & Comandos</h3>
-                <p>Reparo de placas, configuração de centrais de alta velocidade e sensores de fim de curso. Ajuste técnico para fechamento preciso.</p>
+                <h3>Eletrônica Avançada</h3>
+                <p>Reparo e substituição de placas de comando, configuração de centrais inversoras de alta velocidade e sensores de fim de curso (Hall e Reed).</p>
             </div>
             <div class="bento-item col-4">
                 <i class="ph-fill ph-broadcast"></i>
                 <h3>Controles</h3>
-                <p>Codificação de novos controles e sistemas de abertura via celular.</p>
+                <p>Codificação de novos controles e sistemas de abertura via celular (Wi-Fi).</p>
             </div>
             <div class="bento-item col-4">
                 <i class="ph-fill ph-gear"></i>
                 <h3>Mecânica</h3>
-                <p>Troca de engrenagens de tração, rolamentos e lubrificação técnica de trilhos.</p>
+                <p>Troca de engrenagens de nylon e alumínio, rolamentos e lubrificação técnica.</p>
             </div>
             <div class="bento-item col-8">
-                <i class="ph-fill ph-shield-check"></i>
-                <h3>Manutenção Preventiva</h3>
-                <p>Evite o travamento do motor. Revisão completa em sistemas deslizantes, basculantes e pivotantes com peças originais.</p>
+                <i class="ph-fill ph-lightning"></i>
+                <h3>Reparos de Emergência</h3>
+                <p>Portão travado ou motor queimado por raio? Atendimento prioritário para restabelecer a segurança do seu imóvel em Ribas do Rio Pardo.</p>
             </div>
             <div class="bento-item col-12">
                 <i class="ph-fill ph-factory"></i>
                 <h3>Sistemas PPA, Rossi e Intelbras</h3>
-                <p>Expertise técnica nos principais fabricantes do mercado. Substituição de cremalheiras, capacitores de partida e travas elétricas de segurança.</p>
+                <p>Manutenção autorizada nos principais fabricantes do mercado, garantindo peças originais e o torque correto para cada peso de portão (deslizantes, basculantes e pivotantes).</p>
             </div>
         </div>
 
-        <section class="cta-section">
-            <h2 style="font-size: 2.5rem; font-weight: 800; letter-spacing: -0.05em; margin-bottom: 20px;">Seu portão funcionando hoje.</h2>
-            <p style="color: var(--text-muted); margin-bottom: 40px; max-width: 500px; margin-inline: auto;">Não arrisque sua segurança com amadores. Fale com quem entende de automação em Ribas do Rio Pardo.</p>
-            <a href="
-                
+        <section class="process">
+            <div class="section-header">
+                <h2>Como eu resolvo seu problema</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step">
+                    <span class="step-num">01</span>
+                    <h4>Diagnóstico</h4>
+                    <p>Análise da parte elétrica e mecânica para identificar a
