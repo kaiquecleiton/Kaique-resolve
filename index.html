@@ -1,234 +1,489 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaique Resolve | Reparos e Instalações em Ribas do Rio Pardo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --surface: #141414;
+            --surface-hover: #1f1f1f;
+            --border: #262626;
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
+            --brand: #25D366;
+            --brand-hover: #1dad52;
+            --shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-  <title>Eletricista em Ribas do Rio Pardo | Instalação e Manutenção de Portões</title>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
 
-  <meta name="description" content="Eletricista em Ribas do Rio Pardo. Instalação elétrica, manutenção, portões eletrônicos e serviços rápidos com preço justo. Fale no WhatsApp.">
-  <meta name="author" content="Seu Nome ou Marca">
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
 
-  <meta property="og:title" content="Eletricista em Ribas do Rio Pardo">
-  <meta property="og:description" content="Instalação elétrica e portões eletrônicos com atendimento rápido.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="eletrica.jpg">
+        /* Utilidades */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background-color: var(--brand);
+            color: #000000;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
 
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
+        .btn:hover {
+            background-color: var(--brand-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.2);
+        }
 
-    :root {
-      --primary:#0D47A1;
-      --bg:#F4F6F3;
-      --text:#1F1F1F;
-      --cta:#FF9800;
-    }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-align: center;
+            letter-spacing: -0.02em;
+        }
 
-    body {
-      font-family:'Inter',sans-serif;
-      background:var(--bg);
-      color:var(--text);
-    }
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 48px;
+            font-size: 1.125rem;
+        }
 
-    section {
-      padding:35px 20px;
-      text-align:center;
-    }
+        /* Header */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
 
-    .hero {
-      padding:35px 20px 25px;
-      background: linear-gradient(180deg, #F4F6F3 0%, #FFFFFF 100%);
-    }
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: -0.02em;
+        }
 
-    .hero-content {
-      max-width:480px;
-      margin:auto;
-    }
+        .logo i {
+            color: var(--brand);
+        }
 
-    .hero h1 {
-      font-size:26px;
-      font-weight:600;
-      margin-bottom:8px;
-    }
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: 90vh;
+            justify-content: center;
+            position: relative;
+        }
 
-    .hero p {
-      font-size:14px;
-      color:#555;
-      margin-bottom:15px;
-    }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(37,211,102,0.1) 0%, rgba(10,10,10,0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
 
-    .botao {
-      display:block;
-      width:250px;
-      margin:0 auto 15px;
-      background:linear-gradient(135deg,#FF9800,#FF6F00);
-      color:#fff;
-      padding:12px 0;
-      border-radius:8px;
-      text-decoration:none;
-      font-weight:600;
-    }
+        .badge {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-    .slider-novo {
-      width:250px;
-      margin:15px auto 0;
-      position:relative;
-    }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            max-width: 800px;
+            letter-spacing: -0.03em;
+        }
 
-    .slider-novo img {
-      width:100%;
-      border-radius:10px;
-    }
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
 
-    .slider-label {
-      position:absolute;
-      top:6px;
-      left:6px;
-      background:#000;
-      color:#fff;
-      padding:3px 6px;
-      border-radius:4px;
-      font-size:11px;
-    }
+        .hero-list {
+            display: flex;
+            gap: 24px;
+            margin-top: 40px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-    h2 {
-      font-size:20px;
-      color:var(--primary);
-      margin-bottom:10px;
-    }
+        .hero-list span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-    .card {
-      background:#fff;
-      padding:15px;
-      border-radius:8px;
-      max-width:360px;
-      margin:0 auto;
-      font-size:14px;
-      line-height:1.5;
-    }
+        .hero-list i {
+            color: var(--brand);
+        }
 
-    /* RESULTADOS */
-    .resultados {
-      overflow: hidden;
-    }
+        /* Serviços */
+        .services {
+            padding: 100px 0;
+            background-color: var(--bg-color);
+        }
 
-    .slider {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 20px;
-      padding:10px;
-    }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
 
-    .par {
-      display: flex;
-      min-width: 100%;
-      gap:10px;
-      scroll-snap-align: start;
-    }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            transition: var(--transition);
+        }
 
-    .par img {
-      width:50%;
-      border-radius:8px;
-      object-fit:cover;
-    }
+        .card:hover {
+            border-color: var(--brand);
+            transform: translateY(-4px);
+            background: var(--surface-hover);
+        }
 
-    /* WHATSAPP */
-    .whatsapp {
-      position: fixed;
-      bottom: 18px;
-      right: 18px;
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
-      background: #25D366;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      animation: pulse 2s infinite;
-      z-index: 99999;
-    }
+        .card i {
+            font-size: 2.5rem;
+            color: var(--brand);
+            margin-bottom: 20px;
+        }
 
-    .whatsapp img {
-      width:34px;
-    }
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
 
-    @keyframes pulse {
-      0% { box-shadow:0 0 0 0 rgba(37,211,102,0.5); }
-      70% { box-shadow:0 0 0 12px rgba(37,211,102,0); }
-      100% { box-shadow:0 0 0 0 rgba(37,211,102,0); }
-    }
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
 
-  </style>
+        /* Diferenciais */
+        .features {
+            padding: 100px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 16px;
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand);
+            font-size: 1.5rem;
+        }
+
+        .feature-content h4 {
+            font-size: 1.125rem;
+            margin-bottom: 8px;
+        }
+
+        .feature-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .cta-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 64px 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-box p {
+            color: var(--text-muted);
+            font-size: 1.125rem;
+            margin-bottom: 40px;
+        }
+
+        /* Floating WhatsApp */
+        .float-wpp {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            background-color: var(--brand);
+            color: #000;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .float-wpp:hover {
+            transform: scale(1.1);
+            background-color: var(--brand-hover);
+        }
+
+        /* Animações Scroll */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.125rem;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .cta-box {
+                padding: 40px 24px;
+            }
+            .cta-box h2 {
+                font-size: 2rem;
+            }
+            .hero-list {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>Eletricista em Ribas do Rio Pardo com atendimento rápido e profissional</h1>
-    <p>Instalações elétricas, manutenção e portões eletrônicos</p>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="ph-fill ph-wrench"></i> Kaique Resolve
+            </div>
+        </div>
+    </header>
 
-    <a href="https://wa.me/5567981194737?text=Olá,%20preciso%20de%20eletricista" class="botao">
-      Solicitar atendimento
+    <main>
+        <section class="hero container fade-up">
+            <div class="badge">
+                <i class="ph-fill ph-map-pin"></i> Atendimento em Ribas do Rio Pardo - MS
+            </div>
+            <h1>Precisando de reparos rápidos em casa?</h1>
+            <p>Sou o Kaique. Resolvo seus problemas do dia a dia com honestidade, sem enrolação e direto ao ponto. Da tomada quebrada à torneira pingando.</p>
+            <a href="https://wa.me/55SEUNUMERO?text=Olá%20Kaique,%20preciso%20de%20um%20serviço%20em%20casa" class="btn" target="_blank" rel="noopener noreferrer">
+                <i class="ph-fill ph-whatsapp-logo"></i>
+                Chamar no WhatsApp
+            </a>
+            <div class="hero-list">
+                <span><i class="ph-bold ph-check"></i> Elétrica Básica</span>
+                <span><i class="ph-bold ph-check"></i> Hidráulica Simples</span>
+                <span><i class="ph-bold ph-check"></i> Instalações Diversas</span>
+            </div>
+        </section>
+
+        <section class="services fade-up" id="servicos">
+            <div class="container">
+                <h2 class="section-title">O que eu resolvo para você</h2>
+                <p class="section-subtitle">Serviços essenciais para manter sua casa funcionando perfeitamente.</p>
+                
+                <div class="grid">
+                    <div class="card">
+                        <i class="ph-fill ph-lightning"></i>
+                        <h3>Elétrica Básica</h3>
+                        <p>Troca de chuveiros, resistências, disjuntores, instalação de tomadas, interruptores e luminárias de forma segura.</p>
+                    </div>
+                    <div class="card">
+                        <i class="ph-fill ph-drop"></i>
+                        <h3>Hidráulica Simples</h3>
+                        <p>Conserto de vazamentos, troca de torneiras, sifões, reparos em caixas acopladas e desentupimentos básicos.</p>
+                    </div>
+                    <div class="card">
+                        <i class="ph-fill ph-wall"></i>
+                        <h3>Instalações e Reparos</h3>
+                        <p>Instalação de suportes para TV, prateleiras, varais, quadros, montagem de pequenos móveis e consertos em geral.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features fade-up">
+            <div class="container">
+                <h2 class="section-title">Como eu trabalho</h2>
+                <p class="section-subtitle">Direto ao ponto. Foco em resolver o seu problema.</p>
+
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="ph-fill ph-clock"></i></div>
+                        <div class="feature-content">
+                            <h4>Atendimento Rápido</h4>
+                            <p>Eu sei que imprevistos não têm hora. Respondo rápido no WhatsApp e agendo o serviço para o momento mais breve possível.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="ph-fill ph-broom"></i></div>
+                        <div class="feature-content">
+                            <h4>Serviço Limpo</h4>
+                            <p>Trabalho organizado. Entro, resolvo o problema e deixo o ambiente limpo exatamente como encontrei (ou até melhor).</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="ph-fill ph-shield-check"></i></div>
+                        <div class="feature-content">
+                            <h4>Garantia do Serviço</h4>
+                            <p>Faço bem feito na primeira vez, mas se algo não sair como o esperado, eu volto e resolvo. Sua tranquilidade é prioridade.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="ph-fill ph-handshake"></i></div>
+                        <div class="feature-content">
+                            <h4>Profissional Confiável</h4>
+                            <p>Atendimento humanizado e transparente. Sem linguagem difícil, apenas a solução direta para o reparo que você precisa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section fade-up">
+            <div class="container">
+                <div class="cta-box">
+                    <h2>Deixe o conserto comigo</h2>
+                    <p>Não adie mais aquele reparo. Me mande uma mensagem agora, me conte o que precisa e vamos resolver isso hoje mesmo.</p>
+                    <a href="https://wa.me/55SEUNUMERO?text=Olá%20Kaique,%20preciso%20de%20um%20serviço%20em%20casa" class="btn" target="_blank" rel="noopener noreferrer">
+                        <i class="ph-fill ph-whatsapp-logo"></i>
+                        Fazer Orçamento pelo WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <a href="https://wa.me/55SEUNUMERO?text=Olá%20Kaique,%20preciso%20de%20um%20serviço%20em%20casa" class="float-wpp" target="_blank" rel="noopener noreferrer" aria-label="Chamar no WhatsApp">
+        <i class="ph-fill ph-whatsapp-logo"></i>
     </a>
 
-    <div class="slider-novo">
-      <img id="slideImg" src="eletrica1.jpg" alt="Serviço elétrico">
-      <div class="slider-label" id="slideLabel">Serviço</div>
-    </div>
-  </div>
-</section>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
 
-<section>
-  <h2>Serviços</h2>
-  <div class="card">
-    Instalação elétrica residencial • Manutenção • Troca de disjuntores •
-    Portões eletrônicos • Automatização • Reparos urgentes
-  </div>
-</section>
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
 
-<section>
-  <h2>Antes e Depois</h2>
-
-  <div class="resultados">
-    <div class="slider">
-
-      <div class="par">
-        <img src="antes1.jpg" alt="Instalação antes">
-        <img src="depois1.jpg" alt="Instalação depois">
-      </div>
-
-      <div class="par">
-        <img src="antes2.jpg" alt="Portão antes">
-        <img src="depois2.jpg" alt="Portão depois">
-      </div>
-
-    </div>
-  </div>
-
-  <p style="font-size:13px; color:#666; max-width:500px; margin:10px auto;">
-    Serviços elétricos em Ribas do Rio Pardo com qualidade, segurança e agilidade.
-  </p>
-</section>
-
-<a href="https://wa.me/5567981194737?text=Olá,%20preciso%20de%20eletricista" class="whatsapp">
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-</a>
-
-<script>
-const imagens = ["eletrica1.jpg","eletrica2.jpg"];
-let index = 0;
-
-setInterval(() => {
-  index++;
-  if(index >= imagens.length) index = 0;
-  document.getElementById("slideImg").src = imagens[index];
-}, 2500);
-</script>
-
+            const fadeElements = document.querySelectorAll('.fade-up');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>
