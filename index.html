@@ -3,31 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <title>Kaique Resolve | Marido de Aluguel em Ribas do Rio Pardo - MS</title>
-    <meta name="description" content="Precisando de marido de aluguel em Ribas do Rio Pardo? O Kaique Resolve oferece reparos elétricos, hidráulicos e manutenções residenciais com rapidez e confiança.">
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Kaique Resolve",
-      "url": "https://kaiqueresolve.vercel.app",
-      "telephone": "+55SEUNUMERO",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ribas do Rio Pardo",
-        "addressRegion": "MS",
-        "addressCountry": "BR"
-      }
-    }
-    </script>
-
+    <title>Kaique Resolve | Reparos e Instalações em Ribas do Rio Pardo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
     <style>
         :root {
             --bg-color: #0a0a0a;
@@ -38,200 +18,390 @@
             --text-muted: #a1a1aa;
             --brand: #25D366;
             --brand-hover: #1dad52;
+            --shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        
-        body { 
-            background-color: var(--bg-color); 
-            color: var(--text-main); 
-            line-height: 1.5; 
-            overflow-x: hidden; 
-            -webkit-font-smoothing: antialiased; 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
 
-        .container { 
-            max-width: 1100px; 
-            margin: 0 auto; 
-            padding: 0 24px; 
-            width: 100%; 
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Header */
-        header { 
-            padding: 16px 0; 
-            border-bottom: 1px solid var(--border); 
-            position: fixed; 
-            width: 100%; 
-            top: 0; 
-            background: rgba(10, 10, 10, 0.8); 
-            backdrop-filter: blur(12px); 
-            z-index: 100; 
+        /* Utilidades */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
         }
 
-        .logo { 
-            font-size: 1.15rem; 
-            font-weight: 700; 
-            display: flex; 
-            align-items: center; 
-            gap: 8px; 
-        }
-
-        .logo i { color: var(--brand); }
-
-        /* Hero Section */
-        .hero { 
-            padding: 120px 0 60px; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            text-align: center; 
-            min-height: 85vh; 
-            justify-content: center; 
-        }
-
-        .badge { 
-            background: var(--surface); 
-            border: 1px solid var(--border); 
-            padding: 8px 16px; 
-            border-radius: 999px; 
-            font-size: 0.75rem; 
-            color: var(--text-muted); 
-            margin-bottom: 20px; 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .hero h1 { 
-            font-size: 3.25rem; 
-            font-weight: 700; 
-            line-height: 1.1; 
-            margin-bottom: 20px; 
-            max-width: 900px; 
-            letter-spacing: -0.03em; 
-        }
-
-        .hero p { 
-            font-size: 1.15rem; 
-            color: var(--text-muted); 
-            max-width: 600px; 
-            margin-bottom: 32px; 
-            padding: 0 10px;
-        }
-
-        /* Botão Principal */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             background-color: var(--brand);
             color: #000000;
             text-decoration: none;
-            padding: 18px 32px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1.1rem;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.125rem;
             transition: var(--transition);
+            border: none;
+            cursor: pointer;
             width: fit-content;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.15);
         }
 
-        .hero-list { 
-            display: flex; 
-            gap: 20px; 
-            margin-top: 40px; 
-            color: var(--text-muted); 
-            font-size: 0.9rem; 
-            flex-wrap: wrap; 
-            justify-content: center; 
+        .btn:hover {
+            background-color: var(--brand-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.2);
         }
-        
-        .hero-list span { display: flex; align-items: center; gap: 6px; }
-        .hero-list i { color: var(--brand); }
 
-        /* Grid de Serviços */
-        .services { padding: 60px 0; }
-        .section-title { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 40px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        
-        .card { 
-            background: var(--surface); 
-            border: 1px solid var(--border); 
-            border-radius: 16px; 
-            padding: 24px; 
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-align: center;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 48px;
+            font-size: 1.125rem;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .logo i {
+            color: var(--brand);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: 90vh;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(37,211,102,0.1) 0%, rgba(10,10,10,0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .badge {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            max-width: 800px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .hero-list {
+            display: flex;
+            gap: 24px;
+            margin-top: 40px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero-list span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-list i {
+            color: var(--brand);
+        }
+
+        /* Serviços */
+        .services {
+            padding: 80px 0;
+            background-color: var(--bg-color);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
             transition: var(--transition);
+            height: 100%;
         }
 
-        /* Floating Button - Ajustado para não colidir */
-        .float-wpp { 
-            position: fixed; 
-            bottom: 24px; 
-            right: 24px; 
-            background-color: var(--brand); 
-            color: #000; 
-            width: 60px; 
-            height: 60px; 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-size: 2rem; 
-            z-index: 1000; 
-            box-shadow: 0 8px 24px rgba(0,0,0,0.4); 
-            transition: var(--transition); 
+        .card:hover {
+            border-color: var(--brand);
+            transform: translateY(-4px);
+            background: var(--surface-hover);
         }
 
-        /* --- AJUSTES MOBILE (AQUI ESTÁ A SOLUÇÃO) --- */
-        @media (max-width: 600px) {
-            .hero { padding: 100px 0 40px; }
-            
-            .badge { 
-                font-size: 0.65rem; 
+        .card i {
+            font-size: 2.5rem;
+            color: var(--brand);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Diferenciais */
+        .features {
+            padding: 80px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 16px;
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand);
+            font-size: 1.5rem;
+        }
+
+        .feature-content h4 {
+            font-size: 1.125rem;
+            margin-bottom: 8px;
+        }
+
+        .feature-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0 100px;
+            text-align: center;
+        }
+
+        .cta-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 64px 32px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-box p {
+            color: var(--text-muted);
+            font-size: 1.125rem;
+            margin-bottom: 40px;
+        }
+
+        /* Floating WhatsApp */
+        .float-wpp {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background-color: var(--brand);
+            color: #000;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .float-wpp:hover {
+            transform: scale(1.1);
+            background-color: var(--brand-hover);
+        }
+
+        /* Animações Scroll */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsividade Extrema (Celulares) */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 120px 0 60px;
+                min-height: auto;
+            }
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            .hero p {
+                font-size: 1.05rem;
+            }
+            .badge {
+                font-size: 0.8rem;
                 padding: 6px 12px;
-                margin-bottom: 16px;
             }
-
-            .hero h1 { 
-                font-size: 1.85rem; /* Reduzido para não sufocar a tela */
-                line-height: 1.2;
-                margin-bottom: 16px;
-            }
-
-            .hero p { 
-                font-size: 1rem; 
-                line-height: 1.6;
-                margin-bottom: 28px;
-                color: #d1d1d6; /* Um pouco mais claro para leitura */
-            }
-
-            .btn { 
-                width: 100%; /* Botão ocupa a largura total no celular para facilitar clique */
+            .btn {
+                width: 100%;
                 font-size: 1rem;
-                padding: 16px;
+                padding: 16px 20px;
             }
-
             .hero-list {
-                gap: 12px;
-                margin-top: 32px;
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+                width: 100%;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 32px;
             }
 
-            /* Evita que o botão flutuante esconda o texto do botão principal no rodapé */
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .feature-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .cta-box {
+                padding: 40px 20px;
+            }
+            .cta-box h2 {
+                font-size: 1.75rem;
+            }
+            .cta-box p {
+                font-size: 1rem;
+            }
+            
             .float-wpp {
+                bottom: 20px;
+                right: 20px;
                 width: 50px;
                 height: 50px;
-                font-size: 1.6rem;
-                bottom: 16px;
-                right: 16px;
+                font-size: 1.75rem;
             }
         }
-
-        .fade-up { opacity: 0; transform: translateY(20px); transition: 0.6s ease-out; }
-        .fade-up.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
@@ -239,7 +409,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <i class="ph-fill ph-wrench"></i> <span>Kaique Resolve</span>
+                <i class="ph-fill ph-wrench"></i> Kaique Resolve
             </div>
         </div>
     </header>
@@ -247,111 +417,78 @@
     <main>
         <section class="hero container fade-up">
             <div class="badge">
-                <i class="ph-fill ph-map-pin"></i> Ribas do Rio Pardo - MS
+                <i class="ph-fill ph-map-pin"></i> Atendimento em Ribas do Rio Pardo - MS
             </div>
-            
-            <h1>Marido de Aluguel: Reparos Rápidos e Confiáveis</h1>
-            
-            <p>Problemas com elétrica, hidráulica ou pequenos consertos? Resolvo tudo com rapidez, limpeza e preço justo para sua casa ou empresa.</p>
-            
-            <a href="https://wa.me/55SEUNUMERO?text=Olá%20Kaique,%20preciso%20de%20um%20reparo" class="btn">
+            <h1>Precisando de reparos rápidos em casa?</h1>
+            <p>Sou o Kaique. Resolvo seus problemas do dia a dia com honestidade, sem enrolação e direto ao ponto. Da tomada quebrada à torneira pingando.</p>
+            <a href="https://wa.me/55SEUNUMERO?text=Olá%20Kaique,%20preciso%20de%20um%20serviço%20em%20casa" class="btn" target="_blank" rel="noopener noreferrer">
                 <i class="ph-fill ph-whatsapp-logo"></i>
                 Chamar no WhatsApp
             </a>
-
             <div class="hero-list">
-                <span><i class="ph-bold ph-check"></i> Elétrica</span>
-                <span><i class="ph-bold ph-check"></i> Hidráulica</span>
-                <span><i class="ph-bold ph-check"></i> Reparos</span>
+                <span><i class="ph-bold ph-check"></i> Elétrica Básica</span>
+                <span><i class="ph-bold ph-check"></i> Hidráulica Simples</span>
+                <span><i class="ph-bold ph-check"></i> Instalações Diversas</span>
             </div>
         </section>
 
-        <section class="services container fade-up">
-            <h2 class="section-title">O que eu faço</h2>
-            <div class="grid">
-                <div class="card">
-                    <i class="ph-fill ph-lightning"></i>
-                    <h3>Elétrica</h3>
-                    <p>Chuveiros, tomadas, disjuntores e luminárias.</p>
-                </div>
-                <div class="card">
-                    <i class="ph-fill ph-drop"></i>
-                    <h3>Hidráulica</h3>
-                    <p>Vazamentos, torneiras, sifões e descargas.</p>
-                </div>
-                <div class="card">
-                    <i class="ph-fill ph-house-line"></i>
-                    <h3>Geral</h3>
-                    <p>Suportes de TV, cortinas, prateleiras e montagens.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <a href="https://wa.me/55SEUNUMERO?text=Olá%20Kaique,%20preciso%20de%20um%20reparo" class="float-wpp" aria-label="WhatsApp">
-        <i class="ph-fill ph-whatsapp-logo"></i>
-    </a>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) entry.target.classList.add('visible');
-                });
-            });
-            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-        });
-    </script>
-</body>
-</html>
-anutenção elétrica preventiva em Ribas do Rio Pardo.</p>
-                    </article>
-                    <article class="card">
-                        <i class="ph-fill ph-drop" aria-hidden="true"></i>
-                        <h3>Serviços Hidráulicos</h3>
-                        <p>Conserto de vazamentos, troca de reparo de descarga, instalação de torneiras, limpeza de caixa d'água e desentupimentos simples.</p>
-                    </article>
-                    <article class="card">
-                        <i class="ph-fill ph-house-line" aria-hidden="true"></i>
-                        <h3>Instalações em Geral</h3>
-                        <p>Suportes de TV, cortinas, quadros, prateleiras e pequenos reparos em móveis. O suporte completo de um marido de aluguel experiente.</p>
-                    </article>
+        <section class="services fade-up" id="servicos">
+            <div class="container">
+                <h2 class="section-title">O que eu resolvo para você</h2>
+                <p class="section-subtitle">Serviços essenciais para manter sua casa funcionando perfeitamente.</p>
+                
+                <div class="grid">
+                    <div class="card">
+                        <i class="ph-fill ph-lightning"></i>
+                        <h3>Elétrica Básica</h3>
+                        <p>Troca de chuveiros, resistências, disjuntores, instalação de tomadas, interruptores e luminárias de forma segura.</p>
+                    </div>
+                    <div class="card">
+                        <i class="ph-fill ph-drop"></i>
+                        <h3>Hidráulica Simples</h3>
+                        <p>Conserto de vazamentos, troca de torneiras, sifões, reparos em caixas acopladas e desentupimentos básicos.</p>
+                    </div>
+                    <div class="card">
+                        <i class="ph-fill ph-wall"></i>
+                        <h3>Instalações e Reparos</h3>
+                        <p>Instalação de suportes para TV, prateleiras, varais, quadros, montagem de pequenos móveis e consertos em geral.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="features fade-up">
             <div class="container">
-                <h2 class="section-title">Por que escolher o Kaique Resolve?</h2>
-                <p class="section-subtitle">Profissionalismo e respeito pelo seu lar em cada atendimento.</p>
+                <h2 class="section-title">Como eu trabalho</h2>
+                <p class="section-subtitle">Direto ao ponto. Foco em resolver o seu problema.</p>
 
                 <div class="features-grid">
                     <div class="feature-item">
-                        <div class="feature-icon"><i class="ph-fill ph-timer" aria-hidden="true"></i></div>
-                        <div>
-                            <h4>Agilidade no Atendimento</h4>
-                            <p>Atendimento prioritário para emergências domésticas em toda a região de Ribas do Rio Pardo.</p>
+                        <div class="feature-icon"><i class="ph-fill ph-clock"></i></div>
+                        <div class="feature-content">
+                            <h4>Atendimento Rápido</h4>
+                            <p>Eu sei que imprevistos não têm hora. Respondo rápido no WhatsApp e agendo o serviço para o momento mais breve possível.</p>
                         </div>
                     </div>
                     <div class="feature-item">
-                        <div class="feature-icon"><i class="ph-fill ph-sparkle" aria-hidden="true"></i></div>
-                        <div>
-                            <h4>Serviço Organizado</h4>
-                            <p>Garantia de um ambiente limpo após o serviço. Respeito total ao seu patrimônio.</p>
+                        <div class="feature-icon"><i class="ph-fill ph-broom"></i></div>
+                        <div class="feature-content">
+                            <h4>Serviço Limpo</h4>
+                            <p>Trabalho organizado. Entro, resolvo o problema e deixo o ambiente limpo exatamente como encontrei (ou até melhor).</p>
                         </div>
                     </div>
                     <div class="feature-item">
-                        <div class="feature-icon"><i class="ph-fill ph-shield-check" aria-hidden="true"></i></div>
-                        <div>
-                            <h4>Transparência Total</h4>
-                            <p>Orçamentos claros, sem taxas escondidas e garantia de qualidade em todos os materiais instalados.</p>
+                        <div class="feature-icon"><i class="ph-fill ph-shield-check"></i></div>
+                        <div class="feature-content">
+                            <h4>Garantia do Serviço</h4>
+                            <p>Faço bem feito na primeira vez, mas se algo não sair como o esperado, eu volto e resolvo. Sua tranquilidade é prioridade.</p>
                         </div>
                     </div>
                     <div class="feature-item">
-                        <div class="feature-icon"><i class="ph-fill ph-users" aria-hidden="true"></i></div>
-                        <div>
-                            <h4>Profissional de Confiança</h4>
-                            <p>Identificação clara e histórico de bons serviços prestados na comunidade local.</p>
+                        <div class="feature-icon"><i class="ph-fill ph-handshake"></i></div>
+                        <div class="feature-content">
+                            <h4>Profissional Confiável</h4>
+                            <p>Atendimento humanizado e transparente. Sem linguagem difícil, apenas a solução direta para o reparo que você precisa.</p>
                         </div>
                     </div>
                 </div>
@@ -361,39 +498,40 @@ anutenção elétrica preventiva em Ribas do Rio Pardo.</p>
         <section class="cta-section fade-up">
             <div class="container">
                 <div class="cta-box">
-                    <h2>Precisa de ajuda agora em Ribas do Rio Pardo?</h2>
-                    <p>Não perca tempo tentando consertar sozinho. Chame um profissional e tenha a segurança de um serviço bem feito.</p>
-                    <a href="https://wa.me/55SEUNUMERO?text=Olá%20Kaique,%20preciso%20de%20um%20orçamento%20urgente" class="btn" rel="nofollow">
-                        <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
-                        Solicitar Orçamento Grátis
+                    <h2>Deixe o conserto comigo</h2>
+                    <p>Não adie mais aquele reparo. Me mande uma mensagem agora, me conte o que precisa e vamos resolver isso hoje mesmo.</p>
+                    <a href="https://wa.me/55SEUNUMERO?text=Olá%20Kaique,%20preciso%20de%20um%20serviço%20em%20casa" class="btn" target="_blank" rel="noopener noreferrer">
+                        <i class="ph-fill ph-whatsapp-logo"></i>
+                        Fazer Orçamento pelo WhatsApp
                     </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer style="padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.875rem;">
-        <div class="container">
-            <p>&copy; 2026 Kaique Resolve - Ribas do Rio Pardo/MS. Todos os direitos reservados.</p>
-            <p style="margin-top: 8px;">Especialista em Reparos Domésticos e Manutenção Residencial.</p>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/55SEUNUMERO?text=Olá%20Kaique,%20vi%20seu%20site%20e%20preciso%20de%20um%20reparo" class="float-wpp" target="_blank" rel="nofollow" aria-label="Falar com Kaique no WhatsApp">
+    <a href="https://wa.me/55SEUNUMERO?text=Olá%20Kaique,%20preciso%20de%20um%20serviço%20em%20casa" class="float-wpp" target="_blank" rel="noopener noreferrer" aria-label="Chamar no WhatsApp">
         <i class="ph-fill ph-whatsapp-logo"></i>
     </a>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.1 });
+            }, observerOptions);
 
-            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+            const fadeElements = document.querySelectorAll('.fade-up');
+            fadeElements.forEach(el => observer.observe(el));
         });
     </script>
 </body>
