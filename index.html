@@ -2,243 +2,395 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kaique Eletricista - Manutenção elétrica residencial, predial e automação de portões eletrônicos em Campo Grande - MS. Serviço rápido, técnico e seguro.">
+    <title>Kaique Eletricista | Manutenção Técnica & Automação</title>
     
-    <title>Kaique Resolve | Automação e Manutenção de Portões em Ribas do Rio Pardo</title>
-    <meta name="description" content="Especialista em conserto de portão eletrônico, motores PPA, Rossi e Intelbras. Atendimento técnico especializado em Ribas do Rio Pardo - MS.">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-XXXXXX');
+    </script>
+
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async={};
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'XXXXXXXXXXXXXXX');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"/>
+    </noscript>
 
     <style>
+        /* Reset e Variáveis de Design (Estilo Vercel/Linear) */
         :root {
-            --bg: #090909;
-            --surface: #111111;
-            --surface-accent: #1a1a1a;
-            --border: #222222;
-            --brand: #ff6a00;
-            --text-main: #ffffff;
-            --text-muted: #a1a1a1;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --bg-puro: #0f0f0f;
+            --bg-card: #161616;
+            --border-color: #262626;
+            --text-principal: #ffffff;
+            --text-secundario: #888888;
+            --brand-orange: #ff6a00;
+            --brand-orange-hover: #e05d00;
+            --max-width: 1100px;
+            --font-inter: 'Inter', sans-serif;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background: var(--bg); color: var(--text-main); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; width: 100%; }
-
-        /* HEADER */
-        header { 
-            padding: 20px 0; 
-            border-bottom: 1px solid var(--border); 
-            background: rgba(9, 9, 9, 0.8);
-            backdrop-filter: blur(12px);
-            position: sticky; top: 0; z-index: 100;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
         }
-        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.05em; display: flex; align-items: center; gap: 10px; }
-        .logo i { color: var(--brand); }
 
-        /* HERO */
-        .hero { padding: 100px 0 60px; text-align: left; }
-        .badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: var(--surface-accent); border: 1px solid var(--border);
-            padding: 6px 12px; border-radius: 6px; font-size: 0.75rem;
-            font-weight: 600; color: var(--brand); margin-bottom: 24px;
+        body {
+            background-color: var(--bg-puro);
+            color: var(--text-principal);
+            font-family: var(--font-inter);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
+
+        /* Container Global */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header / Navegação Sutil */
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(15, 15, 15, 0.8);
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .logo span {
+            color: var(--brand-orange);
+        }
+
+        .status-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-secundario);
+            background: var(--bg-card);
+            padding: 6px 12px;
+            border-radius: 100px;
+            border: 1px solid var(--border-color);
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #00ff66;
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.7);
+            animation: pulse 2s infinite;
+        }
+
+        /* Seção Hero (Foco Máximo na Dor do Cliente) */
+        .hero {
+            padding: 100px 0 80px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
         .hero h1 {
-            font-size: clamp(2.5rem, 7vw, 4.2rem);
-            font-weight: 800; line-height: 1; letter-spacing: -0.06em;
-            margin-bottom: 28px; max-width: 900px;
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            line-height: 1.15;
+            max-width: 800px;
+            margin: 0 auto 24px auto;
         }
+
+        .hero h1 span {
+            color: var(--brand-orange);
+        }
+
         .hero p {
-            font-size: clamp(1.1rem, 3vw, 1.3rem); color: var(--text-muted);
-            max-width: 650px; margin-bottom: 40px;
+            color: var(--text-secundario);
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            font-weight: 400;
         }
 
-        /* BENTO GRID SERVICES */
-        .bento-grid {
+        /* Botão Call To Action Principal */
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: var(--brand-orange);
+            color: var(--text-principal);
+            text-decoration: none;
+            padding: 16px 32px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 20px rgba(255, 106, 0, 0.2);
+        }
+
+        .btn-cta:hover {
+            background-color: var(--brand-orange-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(255, 106, 0, 0.3);
+        }
+
+        /* Seção de Serviços (Grid Estruturado) */
+        .services {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 48px;
+            text-align: center;
+        }
+
+        .grid-services {
             display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            grid-auto-rows: minmax(180px, auto);
-            gap: 16px;
-            margin-bottom: 80px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
         }
-        .bento-item {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 32px;
-            transition: var(--transition);
-            position: relative; overflow: hidden;
-            word-wrap: break-word; /* Evita que palavras longas quebrem o layout */
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            border-radius: 8px;
+            transition: border-color 0.2s ease;
         }
-        .bento-item:hover { border-color: var(--brand); background: var(--surface-accent); }
-        .bento-item i { font-size: 2rem; color: var(--brand); margin-bottom: 16px; display: block; }
-        .bento-item h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
-        .bento-item p { color: var(--text-muted); font-size: 0.9rem; }
 
-        /* Layout do Grid Desktop */
-        .col-6 { grid-column: span 6; }
-        .col-4 { grid-column: span 4; }
-        .col-8 { grid-column: span 8; }
-        .col-12 { grid-column: span 12; }
-
-        /* PROCESSO DE TRABALHO */
-        .process { padding: 80px 0; border-top: 1px solid var(--border); }
-        .section-header { margin-bottom: 60px; }
-        .section-header h2 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.04em; }
-        
-        .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
-        .step { position: relative; }
-        .step-num { font-size: 0.8rem; font-weight: 800; color: var(--brand); margin-bottom: 12px; display: block; opacity: 0.6; }
-        .step h4 { font-size: 1.1rem; margin-bottom: 12px; }
-
-        /* CTA */
-        .cta-card {
-            background: linear-gradient(135deg, #111 0%, #000 100%);
-            border: 1px solid var(--brand);
-            padding: 60px 40px; border-radius: 24px; text-align: center;
-            margin: 80px 0;
+        .card:hover {
+            border-color: var(--brand-orange);
         }
-        .btn-main {
-            display: inline-flex; align-items: center; gap: 12px;
-            background: var(--brand); color: #000; padding: 18px 40px;
-            border-radius: 8px; font-weight: 700; text-decoration: none;
-            transition: var(--transition); font-size: 1.1rem;
+
+        .card-icon {
+            color: var(--brand-orange);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
-        .btn-main:hover { transform: translateY(-4px); filter: brightness(1.2); }
 
-        /* FOOTER */
-        footer { padding: 60px 0; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--text-muted); }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
-        .footer-list { list-style: none; }
-        .footer-list li { margin-bottom: 8px; }
+        .card h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
 
-        /* MOBILE FIX (CORREÇÃO DO BUG DO PRINT) */
+        .card p {
+            color: var(--text-secundario);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card ul li {
+            color: var(--text-principal);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card ul li::before {
+            content: "✓";
+            color: var(--brand-orange);
+            font-weight: bold;
+        }
+
+        /* Seção Sobre / Diferenciais (Branding Humano) */
+        .about {
+            padding: 80px 0;
+            background-color: rgba(22, 22, 22, 0.3);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about p {
+            font-size: 1.15rem;
+            color: var(--text-secundario);
+            margin-bottom: 24px;
+            text-align: justify;
+        }
+
+        .about p strong {
+            color: var(--text-principal);
+        }
+
+        /* Footer Sutil */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-secundario);
+            font-size: 0.9rem;
+        }
+
+        /* Animações e Responsividade */
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(0, 255, 102, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 102, 0); }
+        }
+
         @media (max-width: 768px) {
-            .hero { padding: 60px 0 40px; }
-            .bento-grid { 
-                display: flex; 
-                flex-direction: column; 
-                gap: 12px; 
-            }
-            .bento-item {
-                width: 100%;
-                padding: 24px;
-            }
-            .cta-card { padding: 40px 20px; }
-            .hero h1 { font-size: 2.5rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
+            .grid-services { grid-template-columns: 1fr; }
+            .card { padding: 30px; }
         }
     </style>
 </head>
 <body>
 
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
     <header>
-        <div class="container nav-inner">
-            <div class="logo">
-                <i class="ph-fill ph-shield-check"></i> KAIQUE RESOLVE
+        <div class="container header-flex">
+            <div class="logo">KAIQUE<span>.ELETRICISTA</span></div>
+            <div class="status-badge">
+                <div class="pulse-dot"></div>
+                Atendendo Agora em Campo Grande
             </div>
-            <div style="font-size: 0.8rem; font-weight: 600; color: var(--brand);">DISPONÍVEL HOJE</div>
         </div>
     </header>
 
-    <main class="container">
-        <section class="hero">
-            <div class="badge">ESPECIALISTA EM AUTOMAÇÃO</div>
-            <h1>Segurança e agilidade no acesso da sua casa.</h1>
-            <p>Diagnóstico técnico de alta precisão em portões eletrônicos. Atendimento em Ribas do Rio Pardo com garantia de serviço executado por especialista.</p>
-            <a href="https://wa.me/55SEUNUMERO" class="btn-main">
-                SOLICITAR VISITA TÉCNICA <i class="ph-bold ph-whatsapp-logo"></i>
+    <section class="hero">
+        <div class="container">
+            <h1>Soluções Elétricas e Automação de Portões com <span>Padrão Técnico</span></h1>
+            <p>Atendimento rápido, diagnóstico preciso e execução segura para sua residência ou comércio. Sem soluções improvisadas, apenas engenharia e prática direcionadas ao que funciona.</p>
+            <a href="https://wa.me/5567999999999?text=Ol%C3%A1%20Kaique,%20preciso%20de%20um%20atendimento%20t%C3%A9cnico." class="btn-cta" id="btn-whatsapp-hero" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.455L0 24zm6.59-4.846c1.642.974 3.254 1.486 4.829 1.487 5.425.001 9.844-4.385 9.848-9.778.002-2.613-1.012-5.071-2.859-6.918C16.577 2.098 14.123 1.083 11.52 1.082c-5.429 0-9.85 4.387-9.853 9.78-.001 1.955.512 3.86 1.488 5.57l-.999 3.647 3.733-.974z"/></svg>
+                Solicitar Atendimento via WhatsApp
             </a>
-        </section>
+        </div>
+    </section>
 
-        <div class="bento-grid">
-            <div class="bento-item col-8">
-                <i class="ph-fill ph-cpu"></i>
-                <h3>Eletrônica Avançada</h3>
-                <p>Reparo e substituição de placas de comando, configuração de centrais inversoras de alta velocidade e sensores de fim de curso (Hall e Reed).</p>
-            </div>
-            <div class="bento-item col-4">
-                <i class="ph-fill ph-broadcast"></i>
-                <h3>Controles</h3>
-                <p>Codificação de novos controles e sistemas de abertura via celular (Wi-Fi).</p>
-            </div>
-            <div class="bento-item col-4">
-                <i class="ph-fill ph-gear"></i>
-                <h3>Mecânica</h3>
-                <p>Troca de engrenagens de nylon e alumínio, rolamentos e lubrificação técnica.</p>
-            </div>
-            <div class="bento-item col-8">
-                <i class="ph-fill ph-lightning"></i>
-                <h3>Reparos de Emergência</h3>
-                <p>Portão travado ou motor queimado por raio? Atendimento prioritário para restabelecer a segurança do seu imóvel em Ribas do Rio Pardo.</p>
-            </div>
-            <div class="bento-item col-12">
-                <i class="ph-fill ph-factory"></i>
-                <h3>Sistemas PPA, Rossi e Intelbras</h3>
-                <p>Manutenção autorizada nos principais fabricantes do mercado, garantindo peças originais e o torque correto para cada peso de portão (deslizantes, basculantes e pivotantes).</p>
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Serviços Especializados</h2>
+            <div class="grid-services">
+                
+                <div class="card">
+                    <div class="card-icon">01 //</div>
+                    <h3>Automação de Portões</h3>
+                    <p>Manutenção corretiva e preventiva em sistemas automáticos de deslizamento, pivô e basculantes. Foco em velocidade e durabilidade.</p>
+                    <ul>
+                        <li>Substituição e programação de placas centrais</li>
+                        <li>Troca de capacitores de partida e engrenagens</li>
+                        <li>Configuração de controles e fim de curso</li>
+                        <li>Instalação de fotocélulas de segurança</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">02 //</div>
+                    <h3>Quadros de Distribuição (QDC)</h3>
+                    <p>Montagem, reforma e adequação técnica de painéis elétricos residenciais e comerciais de acordo com as normas vigentes.</p>
+                    <ul>
+                        <li>Redimensionamento e troca de disjuntores</li>
+                        <li>Instalação de IDR (Proteção contra choques)</li>
+                        <li>Instalação de DPS (Proteção contra surtos/raios)</li>
+                        <li>Organização e balanceamento de fases do circuito</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">03 //</div>
+                    <h3>Instalações & Manutenção</h3>
+                    <p>Diagnóstico e solução de problemas elétricos complexos, quedas de tensão e instalações de novos pontos de energia.</p>
+                    <ul>
+                        <li>Substituição de fiação antiga ou sobrecarregada</li>
+                        <li>Instalação e substituição de tomadas e interruptores</li>
+                        <li>Identificação rápida de curtos-circuitos</li>
+                        <li>Padrão técnico limpo, seguro e organizado</li>
+                    </ul>
+                </div>
+
             </div>
         </div>
+    </section>
 
-        <section class="process">
-            <div class="section-header">
-                <h2>Como eu resolvo seu problema</h2>
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">Por Trás do Serviço</h2>
+                <p>Meu nome é <strong>Kaique</strong>. Trago para o mercado residencial e predial a exatidão, a disciplina e o rigor de segurança desenvolvidos na atuação em <strong>redes de distribuição de energia</strong>. Não trabalho com improvisos ou soluções temporárias que colocam seu patrimônio em risco.</p>
+                <p>O foco do meu posicionamento é entregar o que há de mais essencial e valioso na prestação de serviço técnico: <strong>confiança absoluta, pontualidade e execução impecável</strong>. Quando você solicita meu atendimento, você lida direto com o profissional responsável pela integridade técnica do seu sistema.</p>
             </div>
-            <div class="steps-grid">
-                <div class="step">
-                    <span class="step-num">01</span>
-                    <h4>Diagnóstico</h4>
-                    <p>Análise da parte elétrica e mecânica para identificar a causa real da falha, evitando gastos desnecessários.</p>
-                </div>
-                <div class="step">
-                    <span class="step-num">02</span>
-                    <h4>Execução</h4>
-                    <p>Reparo imediato ou substituição de componentes utilizando ferramentas profissionais e ajustes de precisão.</p>
-                </div>
-                <div class="step">
-                    <span class="step-num">03</span>
-                    <h4>Checklist</h4>
-                    <p>Teste de estresse no motor, lubrificação dos trilhos e entrega do ambiente limpo e funcional.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="cta-card">
-            <h2 style="font-size: 2.2rem; margin-bottom: 16px; letter-spacing: -0.05em;">Não arrisque sua segurança.</h2>
-            <p style="color: var(--text-muted); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto;">Orçamentos claros e diretos via WhatsApp. Atendimento em toda a região de Ribas do Rio Pardo.</p>
-            <a href="https://wa.me/55SEUNUMERO" class="btn-main">FALAR COM O KAIQUE AGORA</a>
         </div>
-    </main>
+    </section>
 
     <footer>
-        <div class="container footer-grid">
-            <div>
-                <p><strong>Kaique Resolve</strong></p>
-                <p>Especialista em Reparos Técnicos</p>
-            </div>
-            <div>
-                <p style="margin-bottom: 12px; color: #fff;">Serviços</p>
-                <ul class="footer-list">
-                    <li>Conserto de Motor de Portão</li>
-                    <li>Troca de Cremalheira</li>
-                    <li>Placas de Comando</li>
-                    <li>Travas Elétricas</li>
-                </ul>
-            </div>
-            <div>
-                <p style="margin-bottom: 12px; color: #fff;">Localidade</p>
-                <p>Ribas do Rio Pardo - MS</p>
-                <p>Atendimento Domiciliar</p>
-            </div>
-        </div>
-        <div class="container" style="margin-top: 60px; opacity: 0.5;">
-            <p>&copy; 2026 Kaique Resolve. Design Premium System.</p>
+        <div class="container">
+            <p>&copy; 2026 Kaique Eletricista. Todos os direitos reservados. Campo Grande - MS.</p>
         </div>
     </footer>
 
+    <script>
+        document.getElementById('btn-whatsapp-hero').addEventListener('click', function() {
+            // Dispara o evento padrão do Meta Ads para clique no botão
+            if(typeof fbq !== 'undefined') {
+                fbq('trackCustom', 'ClickToWhatsApp', {
+                    position: 'HeroSection',
+                    destination: 'CampoGrande_MS'
+                });
+            }
+            
+            // Dispara o evento para o Google Analytics via DataLayer
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'whatsapp_click',
+                'button_location': 'hero'
+            });
+        });
+    </script>
 </body>
 </html>
